@@ -16,7 +16,7 @@ export default function Home() {
       try {
         const fetchedPosts = await getAllPosts();
         setPosts(fetchedPosts);
-      } catch (_) {
+      } catch (err: any) {
         setError("Failed to load blog posts. Please try again later.");
       } finally {
         setLoading(false);
