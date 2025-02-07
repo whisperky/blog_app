@@ -1,8 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Application
+
+A modern blog application built with Next.js 14, featuring a clean and responsive design. This application allows users to read blog posts, filter content by hashtags, and view detailed post pages.
+
+## Features
+
+- Responsive design that works on desktop and mobile
+- Hashtag-based filtering system
+- Blog post cards with previews
+- Detailed blog post pages
+- Modern UI with smooth transitions
+- Fast page loads with Next.js 14
+
+## Tech Stack
+
+- [Next.js 14](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Geist Font](https://vercel.com/font) - Typography
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Create a `.env` file based on `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -10,15 +44,37 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/              # Next.js app router pages
+├── components/       # Reusable UI components
+├── services/        # Business logic and data services
+└── types/           # TypeScript type definitions
+```
+
+## Key Components
+
+- `BlogCard`: Displays blog post previews with hashtags
+- `HashtagButton`: Interactive hashtag filtering
+- Dynamic routing for blog posts (`/post/[id]`)
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ## Learn More
 
