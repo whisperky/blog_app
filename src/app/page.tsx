@@ -16,8 +16,12 @@ export default function Home() {
       try {
         const fetchedPosts = await getAllPosts();
         setPosts(fetchedPosts);
-      } catch (err: any) {
-        setError("Failed to load blog posts. Please try again later.");
+      } catch (error: unknown) {
+        const errorMessage =
+          error instanceof Error
+            ? error.message
+            : "Failed to load blog posts. Please try again later.";
+        setError(errorMessage);
       } finally {
         setLoading(false);
       }
