@@ -11,9 +11,12 @@ export async function generateStaticParams() {
 }
 
 // This is the main page component that handles static generation
-export default async function PostPage({ params }: { params: { id: string } }) {
-  const resolvedParams = await params;
-  const postId = Number(resolvedParams.id);
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const postId = Number((await params).id);
   if (isNaN(postId)) {
     throw new Error("Invalid post ID");
   }
